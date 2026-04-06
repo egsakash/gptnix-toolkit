@@ -100,7 +100,7 @@ async def GenerateImage(prompts: list[str], output_paths: list[str] = None, inpu
     Generate one or multiple images using the Gemini Flash Image model.
     To ensure high quality, provide EXTREMELY detailed, exact, and structurally perfect prompts. Do not use short or ambiguous terms.
     Args:
-        prompts: A list of text descriptions. Each prompt in the list will generate one image. Max 5 allowed to prevent rate limiting.
+        prompts: A list of text descriptions. The model AUTO-UNDERSTANDS aspect ratios (e.g., 16:9, 1:1) and styles from the prompt text natively. Each prompt in the list will generate one independent image (max 5 allowed).
         output_paths: Optional list of FULL ABSOLUTE file paths to save the images. Must match the length of prompts if provided. ALWAYS use ABSOLUTE paths.
         input_images: Optional list of FULL ABSOLUTE image file paths to use as reference/input. Applied to all generated images in this batch.
     """
